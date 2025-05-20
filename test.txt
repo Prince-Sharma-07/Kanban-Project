@@ -1,0 +1,81 @@
+
+
+{
+    name: "User FUll Name",
+    username: "username",
+    email: "Email",
+    profile_url: "https://example.com/profile.jpg",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    
+}
+
+{
+    title: "Task Title",
+    description: "Task Description",
+    stage: "To Do",
+}
+
+const o = {
+  user_id: "kajdhsjk",
+  name: "User Full name",
+  username: "username",
+  email: "email",
+  profile_url: "",
+};
+
+const allstages = {
+  stages: [
+    {
+      label: "Stage1",
+      items: [],
+      total: 0,
+    },
+    {
+      label: "Stage2",
+      items: [],
+      total: 0,
+    },
+    {
+      label: "Stage3",
+      items: [],
+      total: 0,
+    },
+    {
+      label: "Stage4",
+      items: [],
+      total: 0,
+    },
+  ],
+};
+
+const item_state = {
+  title: "",
+  description: "",
+  stage: "",
+  assignee: [],
+  createdAt: "04-04-2004",
+  updatedAt: "07-10-2003",
+  creator: "admin",
+  priority: 1,
+};
+
+const stages = {
+  stages: ["a", "b", "c"],
+};
+
+const initialState_board = {
+    id: "",
+    title: "",
+    description: "",
+    stages: [],
+    color: "#ffffff",
+}
+
+const initialState_boards = [
+    
+]
+
+kanban : {
+    user: {}
+    boards: []
+}
