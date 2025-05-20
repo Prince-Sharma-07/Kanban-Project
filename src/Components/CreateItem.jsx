@@ -28,9 +28,7 @@ export default function CreateItem({ handleCreateItemOpenClose, boardId, stageId
     function handleAddItem() {
         dispatch(addStage({ boardId, stageId, itemData }))
         const board = localData.boards.find(({ board_id }) => board_id === boardId)
-        console.log("This is my board->", board)
         const stage = board.stages.find(({ stage_id }) => stage_id === stageId)
-        console.log("This is my Stage->", stage)
         stage.items.push(itemData)
         localStorage.setItem('kanban', JSON.stringify(localData))
         setItemData({})

@@ -47,11 +47,11 @@ export default function CreateStage({ handleCreateStageOpenClose, boardId }) {
                 <fieldset className="border flex flex-col gap-4 border-black p-4 rounded-md">
                     <legend className="text-xl font-bold px-2">Create New Stage:</legend>
                     <label className='flex flex-col gap-2'>
-                        <span className='font-semibold text-sm'>Stage label: <span className='text-red-500'>*</span></span>
+                        <span className='font-semibold text-sm'>Stage label: </span>
                         <input placeholder='Enter Label for the board' value={stageData.label} onChange={e => setStageData(prev => {
                             prev.label = e.target.value
                             return { ...prev }
-                        })} type="text" required className='border px-2 p-1 outline-0 rounded-md' />
+                        })} type="text" className='border px-2 p-1 outline-0 rounded-md' />
                     </label>
                     <button type='submit' className='p-2 rounded-md font-[500] bg-green-500/90 hover:bg-green-500 cursor-pointer'>Create Stage</button>
                 </fieldset>
