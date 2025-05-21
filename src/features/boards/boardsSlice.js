@@ -5,16 +5,14 @@ const {boards} = JSON.parse(localStorage.getItem('kanban')) ?? defaultLocalData
 
 const initialState = JSON.parse(JSON.stringify(boards))
 
+console.log("this is" , initialState)
+
 export const BoardsSlice = createSlice({
 
     name : "Boards",
     initialState,
     reducers:{
-        addBoardToLocal: (state , {payload = {}})=>{
-            state.push(payload)
-        },
         addBoard: (state , {payload = {}})=>{
-           
              state.push(payload)
         },   
         removeBoard: (state , {payload = ""})=>{
@@ -47,5 +45,5 @@ export const BoardsSlice = createSlice({
 
 })
 
-export const {addBoard , removeBoard , addStage , moveItem} = BoardsSlice.actions
+export const {addBoard , removeBoard , addItem , addStage , moveItem} = BoardsSlice.actions
 export default BoardsSlice.reducer

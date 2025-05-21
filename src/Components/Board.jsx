@@ -16,12 +16,13 @@ export default function Board() {
   const navigate = useNavigate()
   // const { boards } = JSON.parse(localStorage.getItem('kanban')) ?? defaultLocalData
   const boards = useSelector(state => state.Boards)
+ 
   const {
     title = "",
     color = "",
     stages = []
   } = boards.find(({ board_id }) => board_id === boardId) ?? {}
-
+  
   useEffect(() => {
     if (boardId?.length <= 0) navigate('/')
   }, [boardId, navigate])
@@ -58,7 +59,7 @@ export default function Board() {
           }}
           className='stage flex flex-col w-full border-2 rounded-2xl bg-white h-150 p-3 px-4 gap-4'>
             <div className='flex justify-between w-full items-center'>
-              <h1 className='text-2xl font-[700] truncate'>{stage.label.trim() == '' ? 'Stage' + ++i : stage.label}</h1>
+              <h1 className='text-2xl font-[700] truncate'>{(stage.label ?? '').trim() === '' ? 'Stage' + ++i : stage.label}</h1>
               {stage.items.length < 10 ? <button onClick={() => handleCreateItemOpenClose(stage.stage_id)} className='bg-blue-400 px-2 p-1 rounded-md w-fit cursor-pointer'>+Item</button> : null}
             </div>
 

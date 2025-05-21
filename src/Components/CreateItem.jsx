@@ -1,10 +1,12 @@
 import { defaultLocalData } from "../Constants";
 import { useDispatch } from "react-redux";
-import { addStage } from "../features/boards/boardsSlice";
+import { addItem } from "../features/boards/boardsSlice";
 import { useEffect, useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 export default function CreateItem({ handleCreateItemOpenClose, boardId, stageId }) {
+
+    console.log("This is our Stage id" ,stageId)
 
     const [itemData, setItemData] = useState({})
 
@@ -18,15 +20,17 @@ export default function CreateItem({ handleCreateItemOpenClose, boardId, stageId
             creator: "",
             priority: 1,
         })
+        return ()=>setItemData({})
     }, [])
 
     const dispatch = useDispatch()
 
     const localData = JSON.parse(localStorage.getItem('kanban')) ?? defaultLocalData
-
+    // console.log("This is our local data:", localData)
 
     function handleAddItem() {
-        dispatch(addStage({ boardId, stageId, itemData }))
+        dispatch(addItem({ boardId, stageId, itemData }))
+        // console.log("The BoardId: " , boardId , "The stageId: " , stageId , "This ItemData: " , itemData)
         const board = localData.boards.find(({ board_id }) => board_id === boardId)
         const stage = board.stages.find(({ stage_id }) => stage_id === stageId)
         stage.items.push(itemData)
