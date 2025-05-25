@@ -1,17 +1,12 @@
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import CreateBoard from '../Components/CreateBoard'
-// import { defaultLocalData } from '../Constants'
-import { useNavigate } from 'react-router'
+import BoardCard from '../Components/BoardCard'
 
 export default function Home() {
 
   const [open, setOpen] = useState(false)
-
-  const {Boards} = useSelector((state) => state)
-  
-  
-  // const {boards} = JSON.parse(localStorage.getItem('kanban')) ?? defaultLocalData
+  const { Boards } = useSelector((state) => state)
 
   function handleOpenClose() {
     setOpen(!open)
@@ -26,23 +21,12 @@ export default function Home() {
       </div>
       <button onClick={() => handleOpenClose()} className='bg-blue-400 font-[500] lg:text-md p-1 px-2 lg:p-1.5 lg:px-3 xl:p-2 xl:px-4 cursor-pointer rounded-lg '>Add a Board</button>
       <span className='text-xl font-[700]'>Your Boards: </span>
-      <hr className=' w-[82%]'/>
+      <hr className=' w-[82%]' />
       <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-[80%] justify-between'>
-        {Boards.length ? Boards?.map(({ board_id, title, color, stage , description }) => <BoardCard board_id={board_id} title={title} color={color} stage={stage} description={description} />) : <div className='text-lg text-center'>No Boards Available...</div>}
+        {Boards.length ? Boards?.map(({ board_id, title, color, stage, description }) => <BoardCard board_id={board_id} title={title} color={color} stage={stage} description={description} />) : <div className='text-lg text-center'>No Boards Available...</div>}
       </ul>
-    </div> 
+    </div>
   )
 
-  
 }
 
-function BoardCard({ title, description, color, board_id }) {
-  const navigate = useNavigate()
-  return (
-    <li onClick={()=>navigate('/board/' + board_id)} style={{borderColor : color === '#ffffff' ? 'black' : color}} className='shadow-[0px_0px_2.5px_2px_rgba(0,0,0,0.25)] flex flex-col gap-2 border-3 w-full h-30 cursor-pointer rounded-xl overflow-hidden bg-white'>
-      <div style={{ backgroundColor: color}} className={`h-4 w-full ${color === '#ffffff' ? 'border-b-[2px]' : ''}`}></div>
-      <span className='capitalize px-4 truncate'><strong>Board Title:</strong>{title}</span>
-      <span className='px-4 line-clamp-2'><strong>Board Description:</strong>{description}</span>
-    </li>
-  )
-}

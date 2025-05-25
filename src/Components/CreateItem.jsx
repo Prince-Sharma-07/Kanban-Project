@@ -6,7 +6,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 export default function CreateItem({ handleCreateItemOpenClose, boardId, stageId }) {
 
-    console.log("This is our Stage id" ,stageId)
+    // console.log("This is our Stage id" ,stageId)
 
     const [itemData, setItemData] = useState({})
 

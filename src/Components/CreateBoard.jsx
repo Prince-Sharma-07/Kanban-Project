@@ -65,7 +65,7 @@ export default function CreateBoard({ handleOpenClose }) {
                                 prev.color = e.target.value
                                 return { ...prev }
                             }
-                            )} type="color" className="border-2 p-1 rounded-md"/>
+                            )} type="color" className="border-2 p-1 rounded-md cursor-pointer"/>
                             <span className='text-sm font-semibold'>{board.color}</span>
                         </span>
                     </div>
