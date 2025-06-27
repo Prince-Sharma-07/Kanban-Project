@@ -12,6 +12,7 @@ export default function Board() {
 
   const boards = useSelector(state => state.Boards)
 
+
   const {
     title = "",
     color = "",
@@ -32,7 +33,7 @@ export default function Board() {
 
       <h1 style={{ color: color === '#ffffff' ? 'black' : color }} className='text-3xl font-[700] flex items-center justify-center p-2 px-8 capitalize w-fit rounded-2xl'>Board: {title}</h1>
 
-      <Stage key={boardId} stages={stages} boardId={boardId} handleCreateStageOpenClose={handleCreateStageOpenClose} />
+      <Stage stages={stages} boardId={boardId} handleCreateStageOpenClose={handleCreateStageOpenClose} />
     </div>
   )
 }

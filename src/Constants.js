@@ -1,6 +1,5 @@
 export const defaultLocalData = {
-  users: {},
-  boards: [],
+  users: [{ userAuthData: {}, boards: [] }]
 };
 
 export const sampleItems = {
@@ -12,19 +11,17 @@ export const sampleItems = {
   updatedAt: "07-10-2003",
   creator: "Admin",
   priority: 1,
-}
+};
 
 export const sampleStages = [
-    {
-      label: "Stage1",
-      items: [sampleItems , sampleItems , sampleItems],
-      total: 3,
-    },
-    {
-      label: "Stage2",
-      items: [sampleItems , sampleItems],
-      total: 2,
-    },
-]
-
-
+  {
+    label: "Stage1",
+    items: [sampleItems, sampleItems, sampleItems],
+    total: 3,
+  },
+  {
+    label: "Stage2",
+    items: [sampleItems, sampleItems],
+    total: 2,
+  },
+];

@@ -60,5 +60,6 @@ export const BoardsSlice = createSlice({
 
 })
 
+
 export const {addBoard , removeBoard , addItem , addStage , moveItem , removeStage , removeItem} = BoardsSlice.actions
 export default BoardsSlice.reducer

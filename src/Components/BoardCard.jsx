@@ -16,8 +16,8 @@ export default function BoardCard({ title, description, color, board_id }) {
         e.stopPropagation()
         handleRemoveBoard(board_id)
       }
-      } className="absolute bottom-24 text-xl hover:text-red-400 right-3 cursor-pointer">x</button>
-      <div style={{ backgroundColor: color }} className={`h-4 w-full ${color === '#ffffff' ? 'border-b-[2px]' : ''}`} />
+      } className="absolute top-0 text-xl hover:text-red-400 right-3 cursor-pointer"><img className="size-5 hover:shadow-[0px_0px_2px_2px_rgba(0,0,0,0.25)] rounded-full border-2" src="/cross.png" alt="" /></button>
+      <div style={{ backgroundColor: color }} className={`h-5.5 w-full ${color === '#ffffff' ? 'border-b-[2px]' : ''}`} />
       <span className='capitalize px-4 truncate'><strong>Board Title: </strong>{title}</span>
       <span className='px-4 line-clamp-2'><strong>Board Description: </strong>{description}</span>
     </li>
